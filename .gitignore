@@ -1,6 +1,8 @@
 # Fotografias originais (o site usa as versões otimizadas em img/web)
 /img/*
 !/img/logo.jpg
+!/img/favicon-64.png
+!/img/apple-touch-icon.png
 !/img/web/
 !/img/web/**
 /img/web/andrieli.jpg

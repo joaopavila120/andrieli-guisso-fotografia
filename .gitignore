@@ -1,0 +1,21 @@
+# Fotografias originais (o site usa as versões otimizadas em img/web)
+/img/*
+!/img/logo.jpg
+!/img/web/
+!/img/web/**
+/img/web/andrieli.jpg
+/img/web/prof.jpeg
+
+# Arquivos da versão antiga, sem referências no site atual
+/bootstrap/
+/css/style-agendamento.css
+/css/style-portfolio.css
+/css/style-sobre.css
+/js/jquery.js
+/agendamento.php
+
+# Arquivos locais do sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

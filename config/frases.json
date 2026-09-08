@@ -1,0 +1,44 @@
+{
+  "gestantes": {
+    "label": "Gestantes",
+    "alt": "Ensaio fotográfico de gestante",
+    "titles": ["Doce espera", "Amor que cresce", "Novo capítulo", "Luz da espera", "Essência materna", "Antes do encontro", "Vida que floresce"],
+    "phrases": [
+      "O amor começa antes do primeiro encontro.",
+      "Um novo capítulo cresce aqui.",
+      "A espera mais bonita da vida.",
+      "Antes de te conhecer, eu já te amava.",
+      "A beleza de gerar um novo mundo.",
+      "Dois corações e uma história inteira.",
+      "Há um universo inteiro crescendo em você."
+    ]
+  },
+  "newborn": {
+    "label": "Newborn",
+    "alt": "Ensaio fotográfico newborn",
+    "titles": ["Primeiros dias", "Pequena ternura", "Doce sonho", "Aconchego", "Novo começo", "Amor sem medida", "Calma e afeto"],
+    "phrases": [
+      "Tão pequeno. Um amor sem medida.",
+      "Os primeiros detalhes de uma vida inteira.",
+      "Onde o tempo aprende a ir devagar.",
+      "Um começo cheio de ternura.",
+      "Pequenos gestos, memórias eternas.",
+      "O colo onde tudo começa.",
+      "Toda delicadeza cabe neste instante."
+    ]
+  },
+  "retratos": {
+    "label": "Retratos",
+    "alt": "Retrato fotográfico em estúdio",
+    "titles": ["Essência", "Presença", "Autenticidade", "Elegância", "Luz própria", "Verdade", "Singular"],
+    "phrases": [
+      "Sua essência merece ser lembrada.",
+      "Retratos de quem você é.",
+      "Presença que atravessa o tempo.",
+      "A beleza mora no que é verdadeiro.",
+      "Cada olhar guarda uma história.",
+      "Ser você também é uma forma de arte.",
+      "Luz, verdade e tudo o que é só seu."
+    ]
+  }
+}

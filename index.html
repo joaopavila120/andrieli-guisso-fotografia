@@ -9,13 +9,14 @@
   <link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/gallery-data.js" defer></script>
   <script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="Andrieli Guisso Fotografia — início">
-        <img class="brand-logo" src="img/logo.jpg" alt="">
+        <img class="brand-logo" src="img/logo.png" alt="">
         <span class="brand-copy">Andrieli Guisso <small>Fotografia</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
@@ -31,11 +32,7 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-slides" aria-hidden="true">
-        <div class="hero-slide active" style="background-image:url('img/web/ges1.jpeg');background-position:center"></div>
-        <div class="hero-slide" style="background-image:url('img/web/nb8.jpeg');background-position:center"></div>
-        <div class="hero-slide" style="background-image:url('img/web/IMG_4942.jpg.jpeg');background-position:center"></div>
-      </div>
+      <div class="hero-slides" id="home-hero-slides" aria-hidden="true"></div>
       <div class="container hero__content">
         <p class="eyebrow">Fotografia autoral · Sananduva, RS</p>
         <h1 class="display-title" id="hero-title">Fotografias que fazem o <em>tempo parar.</em></h1>
@@ -49,7 +46,7 @@
       </div>
       <span class="scroll-cue">Descubra</span>
       <div class="hero__meta" aria-hidden="true">
-        <span data-slide-number>01</span><span class="hero-progress"><span></span></span><span>03</span>
+        <span data-slide-number>01</span><span class="hero-progress"><span></span></span><span data-slide-total>03</span>
       </div>
     </section>
 
@@ -73,7 +70,7 @@
     <section class="featured-story">
       <div class="container story-grid">
         <div class="image-reveal story-image">
-          <img src="img/web/ges4.jpeg" alt="Gestante sorrindo em ensaio de estúdio" loading="lazy">
+          <img data-gallery-featured="gestantes" alt="Ensaio de gestante" loading="lazy">
         </div>
         <div class="story-copy" data-reveal="right">
           <p class="eyebrow">Ensaio em destaque</p>
@@ -97,20 +94,7 @@
             <svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg>
           </a>
         </div>
-        <div class="preview-grid">
-          <a class="preview-card" href="portfolio.html" data-reveal>
-            <img src="img/web/ges7.jpeg" alt="Retrato de gestante com luz suave" loading="lazy">
-            <div class="preview-card__caption"><div><span>Gestante</span><h3>À espera</h3></div><span>01</span></div>
-          </a>
-          <a class="preview-card" href="portfolio.html" data-reveal data-delay="120">
-            <img src="img/web/nb2.jpeg" alt="Ensaio delicado de bebê recém-nascido" loading="lazy">
-            <div class="preview-card__caption"><div><span>Newborn</span><h3>Começos</h3></div><span>02</span></div>
-          </a>
-          <a class="preview-card" href="portfolio.html" data-reveal data-delay="240">
-            <img src="img/web/IMG_1367.jpg.jpeg" alt="Retrato feminino em estúdio" loading="lazy">
-            <div class="preview-card__caption"><div><span>Retratos</span><h3>Essência</h3></div><span>03</span></div>
-          </a>
-        </div>
+        <div class="preview-grid" id="home-preview-grid"></div>
       </div>
     </section>
 
@@ -139,7 +123,7 @@
       </div>
     </section>
 
-    <section class="quote-section">
+    <section class="quote-section" data-gallery-background="newborn">
       <div class="container" data-reveal>
         <blockquote>“A vida acontece depressa. A fotografia nos permite <span>sentir tudo outra vez.</span>”</blockquote>
       </div>
@@ -161,7 +145,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="index.html"><img class="brand-logo" src="img/logo.jpg" alt=""><span class="brand-copy">Andrieli Guisso <small>Fotografia</small></span></a>
+          <a class="brand" href="index.html"><img class="brand-logo" src="img/logo.png" alt=""><span class="brand-copy">Andrieli Guisso <small>Fotografia</small></span></a>
           <p>Histórias reais, fotografadas com delicadeza e intenção em Sananduva e região.</p>
         </div>
         <div class="footer-column"><h3>Navegue</h3><a href="portfolio.html">Portfólio</a><a href="sobre.html">Sobre</a><a href="agendamento.html">Contato</a></div>

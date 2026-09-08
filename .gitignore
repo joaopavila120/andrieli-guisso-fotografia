@@ -1,6 +1,6 @@
 # Fotografias originais (o site usa as versões otimizadas em img/web)
 /img/*
-!/img/logo.jpg
+!/img/logo.png
 !/img/favicon-64.png
 !/img/apple-touch-icon.png
 !/img/web/

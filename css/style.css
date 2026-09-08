@@ -111,7 +111,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .gallery-preview { padding: 140px 0; background: var(--ink); color: var(--white); }
 .section-head { display: flex; margin-bottom: 60px; align-items: flex-end; justify-content: space-between; gap: 30px; }
 .section-head .section-title { max-width: 760px; }
-.preview-grid { display: grid; grid-template-columns: 1.15fr .78fr .95fr; gap: 18px; align-items: end; }
+.preview-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; align-items: center; }
 .preview-card { position: relative; display: block; overflow: hidden; }
 .preview-card:nth-child(1) { height: 620px; }
 .preview-card:nth-child(2) { height: 450px; }
@@ -123,7 +123,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .preview-card__caption { position: absolute; z-index: 2; right: 30px; bottom: 26px; left: 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
 .preview-card__caption h3 { margin: 4px 0 0; font-family: var(--serif); font-size: clamp(1.8rem,3vw,3rem); font-weight: 400; line-height: 1; }
 .preview-card__caption span { font-size: .64rem; letter-spacing: .15em; text-transform: uppercase; }
-.preview-grid.is-dynamic { align-items: start; }
+.preview-grid.is-dynamic { align-items: center; }
 .preview-grid.is-dynamic .preview-card:nth-child(n) { height: auto; aspect-ratio: var(--photo-ratio); }
 .preview-card .photo-phrase { padding-bottom: 100px; justify-content: center; }
 
@@ -268,6 +268,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .preview-grid { grid-template-columns: 1fr 1fr; }
   .preview-card:nth-child(1) { grid-column: 1/-1; }
   .preview-card:nth-child(2), .preview-card:nth-child(3) { height: 470px; }
+  .preview-grid.is-dynamic .preview-card:nth-child(1) { grid-column: auto; }
+  .preview-grid.is-dynamic .preview-card:nth-child(3) { width: calc(50% - 10px); grid-column: 1/-1; justify-self: center; }
   .experience-item { grid-template-columns: 55px 1fr 40px; }
   .experience-item p { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -299,7 +301,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .section-head { margin-bottom: 40px; align-items: flex-start; flex-direction: column; }
   .preview-grid { display: block; }
   .preview-card:nth-child(n) { height: 115vw; margin-bottom: 16px; }
-  .preview-grid.is-dynamic .preview-card:nth-child(n) { height: auto; }
+  .preview-grid.is-dynamic .preview-card:nth-child(n) { width: 100%; height: auto; }
   .experience-list { margin-top: 45px; }
   .experience-item { min-height: 130px; grid-template-columns: 35px 1fr 25px; gap: 10px; }
   .quote-section { min-height: 70vh; background-attachment: scroll; }

@@ -18,6 +18,11 @@
     const pool = preferred.length ? preferred : items;
     return pool.length ? pool[offset % pool.length] : null;
   };
+  const chooseNamedImage = (category, outputName, preferredOrientation, offset = 0) => {
+    const requestedName = String(outputName || '').toLowerCase();
+    const selected = categoryItems(category).find((item) => item.src.split('/').pop().toLowerCase() === requestedName);
+    return selected || chooseImage(category, preferredOrientation, offset);
+  };
   const cssImage = (src) => `url("${String(src).replaceAll('"', '%22')}")`;
 
   const renderHomeHero = () => {
@@ -36,7 +41,7 @@
     selected.slice(0, 3).forEach((item, index) => {
       const slide = element('div', `hero-slide${index === 0 ? ' active' : ''}`);
       slide.style.backgroundImage = cssImage(item.src);
-      slide.style.backgroundPosition = 'center';
+      slide.style.backgroundPosition = item.orientation === 'portrait' ? 'center 8%' : 'center 46%';
       slide.setAttribute('aria-label', item.phrase);
       container.append(slide);
     });
@@ -66,7 +71,7 @@
     });
 
     document.querySelectorAll('[data-gallery-background]').forEach((section) => {
-      const item = chooseImage(section.dataset.galleryBackground, 'landscape', 1);
+      const item = chooseNamedImage(section.dataset.galleryBackground, section.dataset.galleryImage, 'landscape', 1);
       if (item) section.style.backgroundImage = cssImage(item.src);
     });
   };
@@ -82,8 +87,14 @@
     if (!container) return;
     container.classList.add('is-dynamic');
 
+    const preferredPhotos = {
+      gestantes: 'ges6.jpg',
+      newborn: 'nb6.jpg',
+      retratos: 'IMG_1367.jpg'
+    };
+
     categoryOrder.forEach((category, index) => {
-      const item = chooseImage(category, index === 1 ? 'landscape' : 'portrait');
+      const item = chooseNamedImage(category, preferredPhotos[category], 'portrait');
       if (!item) return;
       const card = element('a', 'preview-card');
       card.href = `portfolio.html?categoria=${category}`;

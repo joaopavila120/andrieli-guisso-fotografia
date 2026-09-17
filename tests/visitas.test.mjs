@@ -62,10 +62,10 @@ function browser(storage, calls, { hostname = 'andrieliguissofotografia.com.br',
   const window = {};
   vm.runInNewContext(script, {
     window, location: { hostname }, document: { visibilityState: 'visible' }, sessionStorage: storage,
-    AbortSignal, console: { table() {} }, Date,
+    AbortSignal, console: { log() {} }, Date,
     fetch: async (url, options) => {
       calls.push(options.method);
-      return { ok: !fail, json: async () => ({ total: 1, hoje: 1, desde: null }) };
+      return { ok: !fail, json: async () => ({ total: 12, hoje: 3, desde: null }) };
     }
   });
   return window;
@@ -75,9 +75,11 @@ test('navegação na mesma aba e consulta no console não duplicam visitas', asy
   const values = new Map();
   const storage = { getItem: (key) => values.get(key), setItem: (key, value) => values.set(key, value) };
   const calls = [];
+  const page = browser(storage, calls);
+  assert.equal(await page.verVisitas(), 12);
+  assert.equal(await page.verVisitasHoje(), 3);
   await browser(storage, calls).verVisitas();
-  await browser(storage, calls).verVisitas();
-  assert.deepEqual(calls, ['POST', 'GET', 'GET']);
+  assert.deepEqual(calls, ['POST', 'GET', 'GET', 'GET']);
   values.set('ag-ultima-visita', String(Date.now() - 31 * 60 * 1000));
   await browser(storage, calls).verVisitas();
   assert.deepEqual(calls.slice(-2), ['POST', 'GET']);

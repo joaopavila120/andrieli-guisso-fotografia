@@ -31,11 +31,12 @@
     start();
   });
 
-  window.verVisitas = async () => {
+  const showCount = async (field, label) => {
     await registration;
     const data = await request();
-    console.table({ 'Total de visitas': data.total, 'Visitas de hoje (Brasília)': data.hoje,
-      'Contagem iniciada em': data.desde ? new Date(data.desde).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : 'Aguardando primeira visita' });
-    return data;
+    console.log(`${label}: ${data[field]}`);
+    return data[field];
   };
+  window.verVisitas = () => showCount('total', 'Total de visitas');
+  window.verVisitasHoje = () => showCount('hoje', 'Visitas de hoje (Brasília)');
 })();

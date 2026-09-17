@@ -42,10 +42,11 @@ Abra `index.html` no navegador. A interface usa HTML, CSS e JavaScript. No Netli
 No site publicado, pressione **F12**, abra **Console** e digite:
 
 ```js
-verVisitas()
+verVisitas()     // Total de visitas
+verVisitasHoje() // Visitas de hoje (horário de Brasília)
 ```
 
-O comando mostra o total, as visitas de hoje (horário de Brasília) e quando a contagem começou. Também é possível abrir diretamente https://andrieliguissofotografia.com.br/.netlify/functions/visitas para consultar os números. Consultas não incrementam o contador. Os totais são públicos.
+Cada comando mostra e retorna apenas o número solicitado. Também é possível abrir diretamente https://andrieliguissofotografia.com.br/.netlify/functions/visitas para consultar os números e quando a contagem começou. Consultas não incrementam o contador. Os totais são públicos.
 
 A contagem começa com a primeira visita após a publicação, sem recuperar acessos antigos. Uma visita corresponde à abertura do site em uma aba; navegação e recarregamentos nessa aba não contam novamente enquanto o intervalo entre carregamentos for inferior a 30 minutos. Outras abas, navegadores e dispositivos podem contar novamente. Sem `sessionStorage`, cada carregamento pode contar. Não é uma contagem de pessoas únicas e pode incluir robôs que executem JavaScript ou acessos artificiais.
 

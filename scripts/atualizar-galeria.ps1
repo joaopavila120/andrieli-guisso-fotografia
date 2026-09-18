@@ -106,7 +106,7 @@ function Export-WebImage {
   }
 }
 
-$catalog = [ordered]@{ categories = [ordered]@{} }
+$catalog = [ordered]@{ categories = [ordered]@{}; phrases = [ordered]@{} }
 
 $totalCreated = 0
 $totalRemoved = 0
@@ -122,6 +122,7 @@ foreach ($category in $categories) {
   $expectedOutput = @{}
   $items = @()
   $categoryPhrases = @($categoryConfig.phrases)
+  $catalog.phrases[$category] = $categoryPhrases
   $categoryTitles = @($categoryConfig.titles)
 
   foreach ($file in $sourceFiles) {

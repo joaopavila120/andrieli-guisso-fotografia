@@ -21,7 +21,7 @@ Use nomes diferentes para cada foto de uma mesma categoria. Evite, por exemplo, 
 
 As frases, títulos e nomes das categorias ficam em `config/frases.json`. Você pode adicionar, remover ou editar textos nesse arquivo e depois executar `ATUALIZAR-SITE.bat` novamente.
 
-Cada fotografia recebe sempre a mesma frase enquanto mantiver o mesmo nome. Ao incluir uma foto nova, o site seleciona automaticamente um dos textos da categoria correspondente.
+As legendas variam a cada abertura da página, usando apenas as frases da categoria da foto. Os textos são distribuídos entre as imagens para evitar repetições enquanto houver frases disponíveis. A miniatura e a foto ampliada exibem a mesma frase durante aquela abertura. Sem acesso ao armazenamento da aba, o site usa uma seleção aleatória. Os títulos continuam associados ao nome da fotografia.
 
 ## Estrutura do site
 

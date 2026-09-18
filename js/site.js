@@ -6,6 +6,21 @@
   const categoryOrder = ['gestantes', 'newborn', 'retratos'];
   const categoryItems = (category) => Array.isArray(gallery[category]) ? gallery[category] : [];
   const allItems = categoryOrder.flatMap(categoryItems);
+  // Alterna as legendas a cada abertura, antes de renderizar cards e lightbox.
+  categoryOrder.forEach((category) => {
+    const phrases = window.GALLERY_DATA?.phrases?.[category];
+    if (!Array.isArray(phrases) || !phrases.length) return;
+    const key = `ag-legendas-${category}`;
+    let offset = Math.floor(Math.random() * phrases.length);
+    try {
+      const saved = sessionStorage.getItem(key);
+      if (saved !== null && /^\d+$/.test(saved)) offset = Number(saved) % phrases.length;
+      sessionStorage.setItem(key, String((offset + 1) % phrases.length));
+    } catch { /* Sem armazenamento, usa uma seleção aleatória. */ }
+    categoryItems(category).forEach((item, index) => {
+      item.phrase = phrases[(index + offset) % phrases.length];
+    });
+  });
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
     if (className) node.className = className;
